@@ -24,12 +24,9 @@ def primeFactors(n):
     primFaktoren =[]
     i = 2
     while n != 1:
-        if(isPrime(i)):
-            if (n/i % 1 == 0):
-                primFaktoren.append(i)
-                n = n/i
-            else:
-                i += 1
+        if(isPrime(i) and n/i % 1 ==0):
+            primFaktoren.append(i)
+            n = n/i
         else:
             i += 1
     return primFaktoren
