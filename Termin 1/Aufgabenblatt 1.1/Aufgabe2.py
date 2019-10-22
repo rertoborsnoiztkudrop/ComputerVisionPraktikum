@@ -1,3 +1,7 @@
+"""
+Aufgabe 2 von Blatt 1.1
+"""
+
 l = list(range(1,10))
 x = int(input("Gib einen Index ein: "))
 

@@ -1,3 +1,7 @@
+"""
+Aufgabe 3 von Blatt 1.1
+"""
+
 wechselkurse = {"England": (0.86, "Pfund"),
                 "Schweiz": (1.1, "Schweizer Franken"),
                 "USA": (1.11, "US-Dollar"),

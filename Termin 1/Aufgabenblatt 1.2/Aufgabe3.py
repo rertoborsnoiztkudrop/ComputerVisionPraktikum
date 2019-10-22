@@ -1,3 +1,7 @@
+"""
+Aufgabe 3 von Blatt 1.2
+"""
+
 myList = [0] * 5
 
 for i, n in enumerate(myList):
