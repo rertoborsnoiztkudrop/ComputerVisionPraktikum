@@ -2,18 +2,20 @@
 Aufgabe 5 von Blatt 1.2
 """
 
-def isPrime(n):
+def findSmallestDivisor(n):
     """
-    Überprüft ob eine Zahl Primzahl ist.
-
-    :param n: die Zahl die geprüft wird
-    :return: true, falls primzahl sonst false
+    Findet den kleinsten echten Teiler einer Ganzzahl.
+    :param n: Die Zahl für die der kleinste echte Teiler gesuchte wird
+    :return: Den kleinsten geminsamen Teiler und den Quotienten
     """
-    for i in range(2,n):
-        if(n/i % 1 == 0):
-            return False
+    if n % 2 == 0:
+        return 2, n // 2
 
-    return True
+    for i in range(3, int(n**0.5 + 1), 2):
+        if(n % i == 0):
+            return i, n // i
+
+    return n, 1
 
 def primeFactors(n):
     """
@@ -22,13 +24,10 @@ def primeFactors(n):
     :return: die Primfaktorzerlegung als Liste
     """
     primFaktoren =[]
-    i = 2
-    while n != 1:
-        if(isPrime(i) and n/i % 1 ==0):
-            primFaktoren.append(i)
-            n = n/i
-        else:
-            i += 1
+    while n > 1:
+        i, n = findSmallestDivisor(n)
+        primFaktoren.append(i)
+
     return primFaktoren
 
 def zerlegungToString(zerlegung):
@@ -46,3 +45,5 @@ def zerlegungToString(zerlegung):
 zahl = int(input("Welche Zahl?: "))
 zerlegung = primeFactors(zahl)
 print(f"{zahl} = " + zerlegungToString(zerlegung))
+
+#  600851475147 = 3*7*7*11*163*2279657
