@@ -1,21 +1,25 @@
+"""
+Aufgabe 1 von Blatt2.2
+"""
+
 import numpy as np
 from skimage.io import imread, imsave
 import matplotlib.pyplot as plt
 
 def BildVergleich (img1, img2):
     """
-
-    :param img1:
-    :param img2:
-    :return:
+    Vergleicht zwei Bildwerte anhand des Graumittelwertes beider Bilder (gibt die Differenz aus)
+    :param img1: das erste Bild
+    :param img2: das zweite Bild
+    :return: Die Differenz der Graumittelwerte
     """
     return np.abs(AvgValImg(img1)-AvgValImg(img2))
 
 def AvgValImg(img):
     """
-
-    :param img:
-    :return:
+    Berechnet den Graumittelwert eines Bildes
+    :param img: das Bild
+    :return: der Graumittelwert
     """
     n= 0
     for x in range(img.shape[0]):

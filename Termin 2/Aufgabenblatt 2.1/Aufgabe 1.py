@@ -1,19 +1,22 @@
-from skimage.io import imread, imsave
+"""
+Aufgabe 1 von Blatt 2.1
+"""
+from skimage.io import imread
 import matplotlib.pyplot as plt
 
 def NumberOfPixels(img):
     '''
-
-    :param img:
-    :return:
+    Berechnet die Anzahl Pixel eines Bildes
+    :param img: das Bild
+    :return: die Anzahl Pixel
     '''
     return img.shape[0] * img.shape[1]
 
 def MaxValImg(img):
     '''
-
-    :param img:
-    :return:
+    Gibt den Wert des hellsten Pixels in einem Graustufenbild wieder.
+    :param img: das Bild
+    :return: der höchste (hellste) Wert
     '''
     n = -1
     for x in range(img.shape[0]):
@@ -23,9 +26,9 @@ def MaxValImg(img):
 
 def MinValImg(img):
     '''
-
-    :param img:
-    :return:
+    Gibt den Wert des dunkelsten Pixels in einem Graustufenbild wieder.
+    :param img: das Bild
+    :return: der niedrigste (dunkelste) Wert
     '''
     n = 256
     pos = [-1, -1]
@@ -40,9 +43,9 @@ def MinValImg(img):
 
 def AvgValImg(img):
     '''
-
-    :param img:
-    :return:
+    Berechnet den Graumittelwert eines Bildes
+    :param img: das Bild
+    :return: der Graumittelwert
     '''
     n = 0
     for x in range(img.shape[0]):
@@ -52,9 +55,9 @@ def AvgValImg(img):
 
 def mean(collection):
     '''
-
-    :param collection:
-    :return:
+    Gibt den Mittelwert einer Collection
+    :param collection: die Collection
+    :return: der Mittelwert
     '''
     n = 0
     for x in collection:

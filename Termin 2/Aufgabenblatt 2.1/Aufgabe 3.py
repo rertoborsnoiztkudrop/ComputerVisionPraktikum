@@ -1,4 +1,7 @@
-from skimage.io import imread, imsave
+"""
+Aufgabe 3 von Blatt 2.1
+"""
+from skimage.io import imread
 
 img = imread("./catG.png")
 
