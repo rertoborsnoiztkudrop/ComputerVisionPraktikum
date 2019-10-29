@@ -3,8 +3,7 @@ Aufgabe 1 von Blatt2.2
 """
 
 import numpy as np
-from skimage.io import imread, imsave
-import matplotlib.pyplot as plt
+from skimage.io import imread
 
 def BildVergleich (img1, img2):
     """
@@ -13,20 +12,7 @@ def BildVergleich (img1, img2):
     :param img2: das zweite Bild
     :return: Die Differenz der Graumittelwerte
     """
-    return np.abs(AvgValImg(img1)-AvgValImg(img2))
-
-def AvgValImg(img):
-    """
-    Berechnet den Graumittelwert eines Bildes
-    :param img: das Bild
-    :return: der Graumittelwert
-    """
-    n= 0
-    for x in range(img.shape[0]):
-        for y in range(img.shape[1]):
-            n += img[x,y]
-    n = n/(img.shape[0]*img.shape[1])
-    return n
+    return np.abs(img1.mean()-img2.mean())
 
 agri3 = imread("./satBilder/agri3.png")
 agri6 = imread("./satBilder/agri6.png")
