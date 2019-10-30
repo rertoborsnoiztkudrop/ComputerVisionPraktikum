@@ -23,17 +23,17 @@ def HistogrammVergleichEuklid(hist1, hist2):
 
 def HistogrammVergleichIntersection(hist1, hist2):
     '''
-    Vergleicht zwei (gleich lange) Histogramme anhand ...
+    Vergleicht zwei (gleich lange) Histogramme anhand der Intersection
     :param hist1: das erste Histogramm
     :param hist2: das zweite Histogramm
-    :return: Die ... der beiden Histogramme
+    :return: Die Gleichheit  der beiden Histogramme zwischen 0 und 1
     '''
 
     intersection = 0
     total = 0
     for i in range(len(hist1)):
         total += hist1[i]
-        intersection += hist1[i] if hist1[i] <= hist2[i] else hist2[i]
+        intersection += min(hist1[i], hist2[i])
     return intersection / total
 
 
