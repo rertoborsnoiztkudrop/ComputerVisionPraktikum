@@ -21,7 +21,12 @@ imsave("./catRot.png",rotKanal)
 imsave("./catGruen.png", gruenKanal)
 imsave("./catBlau.png", blauKanal)
 
-#1.4 ???
+#1.4
+imsave("./catFalsch.png", np.dstack((gruenKanal, blauKanal, rotKanal)))
 
 #1.5
 imsave("./catInverse.png",255 - img)
+
+#1.6
+print("Mittelwert: ", np.mean(img, axis = (0,1)))
+print("Standardabweichung: ", np.std(img, axis =(0,1)))
